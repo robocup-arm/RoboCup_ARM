@@ -1,0 +1,12 @@
+* text=auto
+*.m text
+*.md text
+*.yml text
+*.yaml text
+
+*.slx binary
+*.slxc binary
+*.mat binary
+*.fbx binary
+*.png binary
+*.xlsx binary

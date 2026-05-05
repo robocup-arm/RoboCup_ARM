@@ -5,3 +5,10 @@ slprj/
 *.mex*
 *.pdb
 *.log
+*.tmp
+*.bak
+*.orig
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
