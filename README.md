@@ -2,6 +2,37 @@
 
 MATLAB/Simulink mechanical arm project for RoboCup object recognition, picking, and sorting.
 
+## Team
+
+This project is developed by the **JSIC team at Queen Mary University of London**.
+
+- Team name: **NexusPrime**
+- Team leader: **Jonathan Loo**
+- Members: **Ziqi Guo, Yifu Feng, Siyuan Zhu**
+
+## Python Dependencies
+
+Install Python dependencies before running the vision pipeline:
+
+```bash
+pip install -r requirement.txt
+```
+
+Required packages are defined in [requirement.txt](requirement.txt).
+
+## MATLAB Toolboxes
+
+Please install these MATLAB products before running this project:
+
+- `MATLAB`
+- `Simulink`
+- `Stateflow`
+- `Robotics System Toolbox`
+- `Computer Vision Toolbox`
+- `Image Processing Toolbox`
+- `Simulink 3D Animation`
+- `Parallel Computing Toolbox`
+
 ## Rule Quick View
 
 ### 1) Class IDs
@@ -85,6 +116,16 @@ Or:
 run('scripts/arm_startup.m');
 sim('RoboCup_ARM');
 ```
+
+## Auto Grasp Start (Important)
+
+This is an **auto-grasp task**. After startup:
+
+1. Wait for the `Vision Preview` window to appear.
+2. Click the `Vision Preview` window once to ensure it is focused.
+3. Press `Space` (or `S`) to arm/start auto grasp loop.
+
+If you skip step 2, keyboard input may go to another window and auto grasp will not start.
 
 ## Preview Controls
 
