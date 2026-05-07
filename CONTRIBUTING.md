@@ -1,34 +1,106 @@
 # Contributing Guide
 
-## Branch 建议
+Thank you for contributing to **RoboCup_ARM**.
+This guide defines a consistent workflow for code, models, and documentation changes.
 
-- 功能开发：`feat/<short-name>`
-- 缺陷修复：`fix/<short-name>`
-- 文档调整：`docs/<short-name>`
+## 1) Scope and Principles
 
-## 提交信息建议
+- Keep changes focused. One PR should solve one clear problem.
+- Do not mix unrelated changes in the same commit/PR.
+- Prefer reproducibility: avoid machine-specific paths and temporary local settings.
+- Keep behavior stable unless the PR explicitly targets a behavior change.
 
-- `feat: ...` 新功能
-- `fix: ...` 缺陷修复
-- `refactor: ...` 重构
-- `docs: ...` 文档
-- `chore: ...` 维护类调整
+## 2) Branch Naming
 
-## 提交前检查清单
+Use short, descriptive branch names:
 
-- 关键脚本无语法错误（建议 `checkcode`）
-- `scripts/run_oneclick.m` 能正常启动
-- 地图切换 (`Test World 1/2`) 不引入回归
-- 不提交临时文件与本地缓存
+- `feat/<short-name>` for new features
+- `fix/<short-name>` for bug fixes
+- `docs/<short-name>` for documentation-only changes
+- `refactor/<short-name>` for code structure improvements without behavior changes
+- `chore/<short-name>` for maintenance tasks
 
-## Pull Request 要求
+## 3) Commit Message Convention
 
-- 描述变更目的与影响范围
-- 列出验证步骤和结果
-- 若改动分类/规划/视觉逻辑，请附关键日志或截图
-- 避免将无关改动混入同一 PR
+Use conventional commit prefixes:
 
-## 大文件与资源
+- `feat: ...`
+- `fix: ...`
+- `docs: ...`
+- `refactor: ...`
+- `chore: ...`
 
-- 尽量避免重复提交大型二进制资源
-- 如需频繁更新大文件，建议迁移到 Git LFS
+Good commit message examples:
+
+- `fix: stabilize cube edge yaw guard trigger`
+- `docs: clarify auto grasp startup steps`
+- `chore: add mp4 tracking via Git LFS`
+
+## 4) Local Validation Before Commit
+
+Before committing, run these checks:
+
+1. Project starts correctly:
+   - `run('scripts/run_oneclick.m')`
+2. Auto-grasp startup flow works:
+   - Wait for `Vision Preview`
+   - Click preview window to focus
+   - Press `Space` or `S` to start auto loop
+3. If your change affects world/map behavior:
+   - Verify both `Test World 1` and `Test World 2`
+   - Press `Ctrl + D` after world toggle in `RoboCup_ARM.slx`
+4. If your change affects cube edge strategy:
+   - Verify edge trigger conditions
+   - Confirm no regression for non-cube targets
+5. Basic script quality:
+   - No syntax/runtime errors in touched scripts
+   - Optional: run MATLAB `checkcode` on modified `.m` files
+
+## 5) Pull Request Requirements
+
+Each PR should include:
+
+- Purpose: what problem this PR solves
+- Change summary: main files/modules touched
+- Validation steps: exactly how you tested
+- Result evidence: key logs, screenshots, or short clips when useful
+- Risk notes: known limitations or side effects
+
+Avoid:
+
+- Unrelated formatting-only edits across many files
+- Mixing model, logic, and documentation changes without clear reason
+
+## 6) File and Encoding Rules
+
+- Keep MATLAB source files in readable UTF-8/ASCII (avoid garbled text).
+- Do not commit local temporary files or generated cache artifacts.
+- Keep comments concise and technical.
+
+## 7) Large Files and Git LFS
+
+Use Git LFS for large binary assets, especially:
+
+- `*.mp4`
+- Large model files if frequently updated
+
+Typical workflow:
+
+1. `git lfs track "*.mp4"`
+2. `git add .gitattributes <large-file>`
+3. `git commit -m "chore: ..."`
+
+## 8) Dependencies
+
+If you add/update dependencies:
+
+- Update `README.md` accordingly
+- For Python packages, update `requirement.txt`
+- Explain why the dependency is needed in PR description
+
+## 9) Collaboration Etiquette
+
+- Discuss major architecture changes before implementation.
+- Keep review comments actionable and specific.
+- When uncertain, prefer smaller incremental PRs.
+
