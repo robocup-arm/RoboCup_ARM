@@ -3,10 +3,10 @@
 *.md text
 *.yml text
 *.yaml text
-
 *.slx binary
 *.slxc binary
 *.mat binary
 *.fbx binary
 *.png binary
 *.xlsx binary
+*.mp4 filter=lfs diff=lfs merge=lfs -text

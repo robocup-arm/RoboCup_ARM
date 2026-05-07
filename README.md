@@ -10,6 +10,11 @@ This project is developed by the **JSIC team at Queen Mary University of London*
 - Team leader: **Jonathan Loo**
 - Members: **Ziqi Guo, Yifu Feng, Siyuan Zhu**
 
+## Important Notes
+
+- The score shown in the demo video is **manually counted by our team according to the competition rules**, and is provided only as a reference for the committee's official scoring.
+- A project technical PPT (covering underlying logic and implementation details) is included in this GitHub repository, and we will continue to complete and update it. Please refer to that PPT for deeper technical details.
+
 ## Python Dependencies
 
 Install Python dependencies before running the vision pipeline:
