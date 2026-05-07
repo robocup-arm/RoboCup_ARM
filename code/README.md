@@ -83,3 +83,8 @@ Step 3: Start auto grasp (important):
 - Wait for `Vision Preview` window
 - Click `Vision Preview` once to focus
 - Press `Space` (or `S`) to arm/start auto grasp loop
+
+Step 4: World switching (`Test World 1` / `Test World 2`):
+- Open `RoboCup_ARM.slx`
+- Toggle comment state between `Test World 1` and `Test World 2`
+- Press `Ctrl + D` to update the model before running
